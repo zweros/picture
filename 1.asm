@@ -1,7 +1,5 @@
-
-
-
-```ORG 0000H
+```
+ORG 0000H
 AJMP LP 
 ORG 000H
 LP:
@@ -32,12 +30,28 @@ LP:
 	CLR A
 	MOV A,16H
 	ADD A,18H
-	MOV 20H,A;
+	MOV 20H,A;c5
 
 	CLR A
+	MOV A,20H
+	MOV B,#100
+	DIV AB    ;A=1 B=1
+	ADD A,#30H
+	MOV 50H,A
 
+	CLR A
+ 	MOV A,B
+	MOV B,#10
+	DIV AB    ;A=0 B=1
+	ADD A,#30H
+	MOV 51H,A
 	
- 	
+	CLR A
+	MOV A,B 
+	ADD A,#30H
+	MOV 52H,A
+
+
 SJMP $
 END 
 ```
