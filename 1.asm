@@ -1,0 +1,43 @@
+
+
+
+```ORG 0000H
+AJMP LP 
+ORG 000H
+LP:
+   MIAN:MOV A,#65H;101
+   	ANL A,#0FH
+	MOV 12H,A;5
+
+	CLR A
+	MOV A,#65H
+	ANL A,#0F0H
+	SWAP A
+	MOV 14H,A;6
+
+	CLR A
+	MOV A,14H
+	MOV B,#16
+	MUL AB
+	;ADD A,#30H;A=60H+30H
+        MOV 16H,A;
+
+	CLR A
+	MOV A,12H
+	MOV B,#1
+	MUL AB
+	;ADD A,#30H ;A=5+30
+	MOV 18H,A;
+
+	CLR A
+	MOV A,16H
+	ADD A,18H
+	MOV 20H,A;
+
+	CLR A
+
+	
+ 	
+SJMP $
+END 
+```
